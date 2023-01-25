@@ -34,8 +34,6 @@ Plug 'tpope/vim-repeat' " 使得'.' 操作能重复上次的 cs.., ds., ys..
 Plug 'terryma/vim-multiple-cursors'  " ctrl+n, ctrl+p, ctrl+x 同时编辑多个位置, 首先使用*标记当前需要更改的, next, pre, cancle
 Plug 'mbbill/undotree' " :undotree 查看目前更记录
 Plug 'tpope/vim-commentary' " gcc 注释单行，gc 注释选中的行
-Plug 'SirVer/ultisnips' " 代码片段 配合vim-snippets and coc-nvim
-Plug 'honza/vim-snippets'  " ctrl+j, ctrl+k, 输入代码片段的关键字后, 使用这两个快捷键前进后退
 Plug 'w0rp/ale' " 代码静态检查，代码格式修正, 见配置并需要安装各语言依赖, 如flake8
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " 代码补全, 见配置并需要安装各语言依赖, 如coc-python
 
@@ -336,15 +334,10 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 let g:markdown_folding = 1
 let g:tex_fold_enabled = 1
 let g:vimsyn_folding = 'af'
-let g:xml_syntax_folding = 1
 let g:javaScript_fold = 1
 let g:sh_fold_enabled= 7
-let g:ruby_fold = 1
-let g:perl_fold = 1
-let g:perl_fold_blocks = 1
 let g:r_syntax_folding = 1
 let g:rust_fold = 1
-let g:php_folding = 1
 
 
 " ------------------------------------------------
@@ -445,33 +438,6 @@ nnoremap <silent> <leader>k :call InterestingWords('n')<cr>
 nnoremap <silent> <leader>K :call UncolorAllWords()<cr>
 nnoremap <silent> n :call WordNavigation('forward')<cr>
 nnoremap <silent> N :call WordNavigation('backward')<cr>
-
-
-" ------------------------------------------------
-" For ultisnips and coc-ultisnips and vim-snippets
-" 使用Ctrl+j, Ctrl+k 作为snippets时的跳转键
-" more see :help ultisnips and :help vim-snippets
-" ------------------------------------------------
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-" ------------------------------------------------
-" For Rust
-" 使用gd, gs, gx时的跳转键
-" more see :help ultisnips and :help vim-snippets
-" ------------------------------------------------
-au FileType rust nmap <leader>rf :RustFmt<cr>
-au FileType rust nmap <leader>rr :RustRun<cr>
-au FileType rust nmap <leader>rp :RustPlay<cr>
-au FileType rust nmap <leader>rt :RustTest<cr>
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
-let g:racer_experimental_completer = 1
-let g:racer_insert_paren = 1
-let g:rust_clip_command = 'pbcopy'
 
 
 let g:floaterm_width = 0.9
