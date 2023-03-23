@@ -4,8 +4,10 @@
 ### Installing Vim-Plug (https://github.com/junegunn/vim-plug).
 [Here is a video to learn how to set it up: https://www.youtube.com/watch?v=QB9V__3VO2s.]
 - Create directory called nvim on .config
+
 Run `cd ~/.config && mkdir nvim && cd nvim`
 - Create Init.vim file
+
 Create file: `touch init.vim`
 Point to vim file: `nvim init.vim`
 ```
